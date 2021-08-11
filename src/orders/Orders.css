@@ -1,0 +1,26 @@
+.order-container {
+  width: 80%;
+  margin: 110px auto;
+}
+.ongo-order-sec {
+  display: flex;
+  align-items: flex-start;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  padding-top: 30px;
+}
+.stepper {
+  width: 20%;
+  margin-top: -10px;
+  border-right: 1px solid #cccccc;
+}
+.order-sec {
+  padding-left: 55px;
+  width: 80%;
+}
+.MuiStepIcon-root.MuiStepIcon-completed {
+  color: #21ce86 !important;
+}
+.MuiStepIcon-root.MuiStepIcon-active {
+  color: #80849a !important;
+}
