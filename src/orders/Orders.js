@@ -50,7 +50,7 @@ function a11yProps(index) {
 }
 
 const Orders = () => {
-  const [myOrders, setMyOrders] = useState();
+  const [myOrders, setMyOrders] = useState([]);
   const { sendRequest } = useHttpClient();
   const auth = useContext(AuthContext);
 
@@ -119,7 +119,7 @@ const Orders = () => {
       </AppBar>
       <TabPanel value={value} index={0}>
         <h3>Current Order</h3>
-        {myOrders ? (
+        {myOrders.length > 0 ? (
           <div className="ongo-order-sec">
             <div className="stepper">
               <Stepper activeStep={activeStep} orientation="vertical">
@@ -153,7 +153,9 @@ const Orders = () => {
               </>
             </div>
           </div>
-        ) : null}
+        ) : (
+          <div>You don't have any active orders</div>
+        )}
       </TabPanel>
 
       <TabPanel value={value} index={1}>
