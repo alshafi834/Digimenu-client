@@ -134,7 +134,7 @@ const Users = () => {
     console.log("creating food");
     try {
       const responseData = await sendRequest(
-        "http://localhost:8000/api/users/addfooditem",
+        `${process.env.REACT_APP_API_URL}/api/users/addfooditem`,
         "POST",
         JSON.stringify({
           fooditem: food,
@@ -174,7 +174,7 @@ const Users = () => {
   const deleteCat = async (id) => {
     try {
       const responseData = await sendRequest(
-        `http://localhost:8000/api/users/deletecategory/${id}`,
+        `${process.env.REACT_APP_API_URL}/api/users/deletecategory/${id}`,
         "DELETE",
         JSON.stringify({
           email: restInfo.email,
@@ -191,7 +191,7 @@ const Users = () => {
   const deleteFood = async (id) => {
     try {
       const responseData = await sendRequest(
-        `http://localhost:8000/api/users/deletefood/${id}`,
+        `${process.env.REACT_APP_API_URL}/api/users/deletefood/${id}`,
         "DELETE",
         JSON.stringify({
           email: restInfo.email,
@@ -209,7 +209,7 @@ const Users = () => {
     const getUserProfile = async () => {
       try {
         const responseData = await sendRequest(
-          "http://localhost:8000/api/users",
+          `${process.env.REACT_APP_API_URL}/api/users`,
           "POST",
           JSON.stringify({
             userID: auth.userId,
@@ -221,7 +221,9 @@ const Users = () => {
         );
 
         setRestInfo(responseData);
-        setQrUrl(`http://localhost:3006/browse/609d96e5b5ce26374895e435`);
+        setQrUrl(
+          `${process.env.REACT_APP_MENU_URL}/browse/609d96e5b5ce26374895e435`
+        );
         setAllCat(responseData.categories);
         setCreatedFoods(responseData.fooditems);
       } catch (error) {

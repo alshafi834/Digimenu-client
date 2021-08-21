@@ -56,7 +56,12 @@ export const useCart = () => {
     totalPrice = totalPrice - citem.foodPrice;
     citem.qPrice = citem.foodPrice * citem.quantity;
     //cartItems[index] = citem;
-    setCartItems([...cartItems, (cartItems[index] = citem)]);
+    if (citem.quantity === 0) {
+      setCartItems([...cartItems, cartItems.splice(index, 1)]);
+    } else {
+      setCartItems([...cartItems, (cartItems[index] = citem)]);
+    }
+
     //setCartItems(cartItems);
     const storedData = JSON.parse(localStorage.getItem("cartData"));
     localStorage.setItem(

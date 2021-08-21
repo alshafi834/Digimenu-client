@@ -57,7 +57,7 @@ const BrowseRestaurant = (props) => {
     const getUserProfile = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:8000/api/users/browse/${resturantId}`,
+          `${process.env.REACT_APP_API_URL}/api/users/browse/${resturantId}`,
           "POST",
           JSON.stringify({
             userID: auth.userId,

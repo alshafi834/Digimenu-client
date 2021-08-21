@@ -2,6 +2,22 @@
   width: 80%;
   margin: 110px auto;
 }
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.refresh-btn {
+  margin-top: 20px;
+  background-color: rgb(40, 170, 127);
+  padding: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  width: 95px;
+}
 .ongo-order-sec {
   display: flex;
   align-items: flex-start;
@@ -23,4 +39,24 @@
 }
 .MuiStepIcon-root.MuiStepIcon-active {
   color: #80849a !important;
+}
+
+.MuiAppBar-colorPrimary {
+  background-color: #414248 !important;
+}
+
+@media (max-width: 768px) {
+  .ongo-order-sec {
+    display: flex;
+    flex-direction: column;
+  }
+  .stepper {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #cccccc;
+  }
+  .order-sec {
+    padding-left: 0px;
+    width: 100%;
+  }
 }

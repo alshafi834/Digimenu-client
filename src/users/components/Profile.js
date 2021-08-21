@@ -23,7 +23,7 @@ const Profile = () => {
     event.preventDefault();
     try {
       const responseData = await sendRequest(
-        "http://localhost:8000/api/users/editcustomerprofileinfo",
+        `${process.env.REACT_APP_API_URL}/api/users/editcustomerprofileinfo`,
         "POST",
         JSON.stringify({
           customerproInfo: customerInfo,
@@ -44,7 +44,7 @@ const Profile = () => {
     const getUserProfile = async () => {
       try {
         const responseData = await sendRequest(
-          "http://localhost:8000/api/users",
+          `${process.env.REACT_APP_API_URL}/api/users`,
           "POST",
           JSON.stringify({
             userID: auth.userId,

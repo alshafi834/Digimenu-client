@@ -18,6 +18,8 @@ import Browse from "./browse/Browse";
 import BrowseRestaurant from "./browse/BrowseRestaurant";
 import Cart from "./cart/Cart";
 import Orders from "./orders/Orders";
+import ReportCovid from "./report/ReportCovid";
+import Notifications from "./notification/Notifications";
 
 const App = () => {
   const { token, login, logout, userId } = useAuth();
@@ -29,7 +31,7 @@ const App = () => {
     routes = (
       <Switch>
         <Route path="/" exact>
-          <Home />
+          <Browse />
         </Route>{" "}
         <Route path="/users">
           <Users />
@@ -45,6 +47,12 @@ const App = () => {
         </Route>
         <Route path="/orders" exact>
           <Orders />
+        </Route>
+        <Route path="/reportcase" exact>
+          <ReportCovid />
+        </Route>
+        <Route path="/notifications" exact>
+          <Notifications />
         </Route>
         <Route path="/browse/:restId" exact>
           <BrowseRestaurant />

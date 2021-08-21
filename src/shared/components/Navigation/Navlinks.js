@@ -45,6 +45,11 @@ const Navlinks = () => {
               Report Covid Case
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/notifications" exact>
+              Notifications
+            </NavLink>
+          </li>
         </>
       )}
 
@@ -55,7 +60,9 @@ const Navlinks = () => {
       )}
       {auth.isLoggedIn && (
         <li>
-          <button onClick={auth.logout}>Logout</button>
+          <button onClick={auth.logout}>
+            <NavLink to="/">Logout</NavLink>
+          </button>
         </li>
       )}
     </ul>

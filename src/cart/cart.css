@@ -16,6 +16,7 @@
   background-color: white;
 }
 .cartItem-top {
+  width: 30%;
   display: flex;
   align-items: center;
 }
@@ -68,4 +69,29 @@ span.quantity {
   font-weight: bold;
   cursor: pointer;
   width: 95px;
+}
+
+.empty-cart {
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 50px 0;
+}
+
+@media (max-width: 768px) {
+  .cartItem img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+  }
+  .cartItem-top {
+    width: 40%;
+  }
+  .cartItem-top span {
+    font-size: 13px;
+  }
 }

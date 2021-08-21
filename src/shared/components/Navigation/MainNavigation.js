@@ -47,10 +47,12 @@ const MainNavigation = (props) => {
         </nav>
         {auth.isLoggedIn && (
           <div>
-            <FastfoodIcon className="cart-icon" />
-            <span className="cart-nmbr">
-              {cart ? cart.cartItems.length : 0}
-            </span>
+            <Link to="/cart">
+              <FastfoodIcon className="cart-icon" />
+              <span className="cart-nmbr">
+                {cart ? cart.cartItems.length : 0}
+              </span>
+            </Link>
           </div>
         )}
       </MainHeader>
